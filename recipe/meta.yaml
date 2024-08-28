@@ -1,13 +1,13 @@
 {% set name = "opentelemetry-resourcedetector-gcp" %}
-{% set version = "1.6.0a0" %}
+{% set version = "1.7.0a0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry-resourcedetector-gcp-{{ version }}.tar.gz
-  sha256: 1cd2a6eed88303475af0ce1fabb9609fa671455f38d305d8e7a674afa630600c
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 70e49a9ec282089cae60c450fc9fa1bb63eafac2e1747acb9603574f430e3666
 
 build:
   noarch: python
@@ -18,6 +18,7 @@ requirements:
   host:
     - python >=3.7
     - pip
+    - setuptools
   run:
     - python >=3.7
     - opentelemetry-api >=1.0,<2.dev0
