@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: opentelemetry-resourcedetector-gcp
-  version: 1.12.0a0
+  version: 1.14.0
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: d5e3f78283a272eb92547e00bbeff45b7332a34ae791a70ab4eba81af9bc3baf
+  sha256: 10b41802acf815838a85c9fe1dae02f5d27ebc17527b77441111c010bead95bc
 
 build:
   number: 0
@@ -21,7 +21,7 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - hatchling
   run:
     - typing_extensions >=4.0,<5.dev0
     - python >=${{ python_min }}
